@@ -1,0 +1,17 @@
+﻿@page "/my-page"
+@page "/custom-page"
+@page "/customer/{CustomerId?}" 
+@*This is usefull to improve the CEO of your page (:*@
+
+<PageTitle>Customer Title</PageTitle>
+<HeadContent>
+    <meta name="description" content="any content"/>
+</HeadContent>
+
+<h3>Customer</h3>
+<p>@CustomerId</p>
+
+@code {
+    [Parameter]
+    public string? CustomerId { get; set; }
+}

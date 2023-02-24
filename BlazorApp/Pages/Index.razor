@@ -1,0 +1,18 @@
+﻿@using BlazorApp.Components
+@page "/"
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+@*
+<Login />
+<ParameterComponent Title="@TextTitle" Price=12 Features="@(new List<string>(){"easy", "fast", "the best"})"/>
+<TwoWayBinding />
+<RaffleWinner />
+*@
+<ColorSwitcher />
+@code {
+    private string TextTitle => $"This is a parameter {@AnnotherText}";
+    private string AnnotherText => "what ever";
+}

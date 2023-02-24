@@ -1,0 +1,21 @@
+﻿<h3>@Title</h3>
+<p>@Price</p>
+
+    @if(Features != null)
+    {
+        <ul>
+            @foreach(var feature in Features){
+                <li>@feature</li>
+            }
+        </ul>
+    }
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+    [Parameter]
+    public List<string>? Features { get; set; } = new List<string>();
+    // Also you can set a empty List and do not do the validation
+    //public List<string>? Features { get; set; } = new List<string>();
+    [Parameter]
+    public double Price { get; set; }
+}

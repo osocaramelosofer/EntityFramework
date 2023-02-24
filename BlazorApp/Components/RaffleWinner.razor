@@ -1,0 +1,26 @@
+﻿<h3>RaffleWinner</h3>
+
+<button @onclick=GetWinnerNumber class="btn btn-primary">Click to generate a random number</button>
+<p>@WinnerNumber</p>
+<label>Save the number?</label>
+<input type="checkbox" @bind="isSaved"/>
+
+<ul>
+    @foreach (var number in Winners)
+    {
+        <li>@number</li>
+    }
+</ul>
+@code {
+    public int WinnerNumber { get; set; }
+    public List<int> Winners { get; set; } = new List<int>();
+    bool isSaved { get; set; }
+
+    void GetWinnerNumber() {
+        WinnerNumber = new Random().Next(0, 1000);
+        if(isSaved){
+            Winners.Add(WinnerNumber);
+        }
+    }
+
+}

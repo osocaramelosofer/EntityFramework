@@ -1,0 +1,9 @@
+﻿<h3>TwoWayBinding</h3>
+
+<input @bind="Name" @bind:event="oninput"/>
+<p>@Name</p>
+
+@code {
+    public string Name {get; set;} = "Hector";
+    
+}

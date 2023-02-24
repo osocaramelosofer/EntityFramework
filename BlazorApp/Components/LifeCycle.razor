@@ -1,0 +1,34 @@
+﻿<h3>LifeCycle</h3>
+
+@code {
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        return base.SetParametersAsync(parameters);
+    }
+    protected override Task OnParametersSetAsync()
+    {
+        return base.OnParametersSetAsync();
+    }
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("OnInitialized");
+    }
+    protected override async Task OnInitializedAsync(){
+        Console.WriteLine("OnInitializedAsync");
+        await Task.Delay(1000);
+    }
+    protected override void OnParametersSet()
+    {
+        // Se ejecuta cuando hay un cambio en el componente padre y lo refleja en los componentes hijos
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+    }
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        return base.OnAfterRenderAsync(firstRender);
+    }
+    // With this method you update the component, it returns true
+    // Statehaschange();
+}
